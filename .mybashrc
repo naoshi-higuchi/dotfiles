@@ -2,6 +2,10 @@ if [ -d $HOME/bin ]; then
 	export PATH=$PATH:$HOME/bin
 fi
 
+if [ -f $HOME/.mybashrc.local ]; then
+	. $HOME/.mybashrc.local
+fi
+
 source <(kubectl completion bash)
 
 alias k=kubectl
