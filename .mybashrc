@@ -6,10 +6,9 @@ if [ -f $HOME/.mybashrc.local ]; then
 	. $HOME/.mybashrc.local
 fi
 
-source <(kubectl completion bash)
-
-alias k=kubectl
-complete -F __start_kubectl k
+# source <(kubectl completion bash)
+# alias k=kubectl
+# complete -F __start_kubectl k
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
