@@ -6,9 +6,11 @@ if [ -f $HOME/.mybashrc.local ]; then
 	. $HOME/.mybashrc.local
 fi
 
-# source <(kubectl completion bash)
-# alias k=kubectl
-# complete -F __start_kubectl k
+if [ -x "$(command -v kubectl)" ]; then
+	source <(kubectl completion bash)
+	alias k=kubectl
+	complete -F __start_kubectl k
+fi
 
 if [ -d /usr/local/aws-cli/v2 ]; then
 	export PATH=$PATH:/usr/local/aws-cli/v2/current/bin
