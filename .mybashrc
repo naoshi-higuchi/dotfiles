@@ -10,6 +10,10 @@ fi
 # alias k=kubectl
 # complete -F __start_kubectl k
 
+if [ -d /usr/local/aws-cli/v2 ]; then
+	export PATH=$PATH:/usr/local/aws-cli/v2/current/bin
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
